@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bbb",
+    "brb",
+    "bbb"
+  ],
+  "key": {
+    "b": {
+      "item": "create:andesite_casing"
+    },
+    "r": {
+      "item": "create:shaft"
+    }
+  },
+  "result": {
+    "item": "createdoener:doener_spear",
+    "count": 1
+  }
+}

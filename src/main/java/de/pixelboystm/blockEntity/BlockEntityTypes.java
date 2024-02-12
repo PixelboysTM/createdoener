@@ -1,0 +1,20 @@
+package de.pixelboystm.blockEntity;
+
+import de.pixelboystm.block.Blocks;
+import de.pixelboystm.createdoener.CreateDoener;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
+
+public class BlockEntityTypes {
+
+    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, CreateDoener.MODID);
+
+    public static final RegistryObject<BlockEntityType<DoenerSpearBlockEntity>> DOENER_SPEAR = BLOCK_ENTITY_TYPES.register("doener_spear_block_entity" , () -> BlockEntityType.Builder.of(DoenerSpearBlockEntity::new, Blocks.DOENER_SPEAR.get()).build(null));
+
+    public static void register(){
+        BLOCK_ENTITY_TYPES.register(FMLJavaModLoadingContext.get().getModEventBus());
+    }
+}
