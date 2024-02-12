@@ -44,7 +44,6 @@ public class DoenerSpearBlockEntity extends KineticBlockEntity {
                     CreateDoener.LOGGER.debug("DONE");
                 }else {
                     ticksBurning++;
-                    CreateDoener.LOGGER.debug("Cooking");
                 }
             }
         }

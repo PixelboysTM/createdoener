@@ -125,16 +125,16 @@ public class DoenerSpear extends Block implements IRotate, IBE<DoenerSpearBlockE
 
     @Override
     public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
-        CreateDoener.LOGGER.debug("CLICK######################");
-        withBlockEntityDo(world, pos, (e) -> {
-            CreateDoener.LOGGER.debug("Speed: "  + e.getSpeed() + "\n Heat: " + DoenerSpearBlockEntity.getHeatLevelOf(world.getBlockState(pos.below())));
-        });
+//        CreateDoener.LOGGER.debug("CLICK######################");
+//        withBlockEntityDo(world, pos, (e) -> {
+//            CreateDoener.LOGGER.debug("Speed: "  + e.getSpeed() + "\n Heat: " + DoenerSpearBlockEntity.getHeatLevelOf(world.getBlockState(pos.below())));
+//        });
 
         if (world.isClientSide())
             return InteractionResult.PASS;
 
 
-        CreateDoener.LOGGER.debug("# Not client");
+//        CreateDoener.LOGGER.debug("# Not client");
         if (player.getItemInHand(hand).is(Items.MUTTON) && state.getValue(FILL) != Fill.Full) {
             if (state.getValue(FILL) != Fill.None && state.getValue(STATE) != CookState.Raw)
                 return InteractionResult.PASS;
@@ -143,14 +143,16 @@ public class DoenerSpear extends Block implements IRotate, IBE<DoenerSpearBlockE
 
 
 
-            CreateDoener.LOGGER.debug("# Mutton");
+//            CreateDoener.LOGGER.debug("# Mutton");
             return InteractionResult.CONSUME;
         }
 
-        if (player.getItemInHand(hand).is(Items.IRON_SWORD) && state.getValue(STATE) == CookState.Cooked && state.getValue(FILL) != Fill.None) {
+        if (player.getItemInHand(hand).is(de.pixelboystm.item.Items.DOENER_KNIFE.get()) && state.getValue(STATE) == CookState.Cooked && state.getValue(FILL) != Fill.None) {
             world.setBlockAndUpdate(pos, state.setValue(FILL, state.getValue(FILL).prev()));
-            player.drop(new ItemStack(Items.COOKED_MUTTON, 1), false);
-
+            player.drop(new ItemStack(de.pixelboystm.item.Items.DOENER_MEAT.get(), 1), false);
+            if (player.getItemInHand(hand).isDamageableItem()) {
+                player.getItemInHand(hand).hurtAndBreak(1, player, (e) ->{});
+            }
             return InteractionResult.SUCCESS;
         }
 

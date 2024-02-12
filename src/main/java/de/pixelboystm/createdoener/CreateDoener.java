@@ -57,9 +57,11 @@ public class CreateDoener {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
     public static final RegistryObject<CreativeModeTab> DOENER_TAB = CREATIVE_MODE_TABS.register("doener_tab", () -> CreativeModeTab.builder()
             .title(Component.translatable("tab.createdoener.doener_tab"))
-            .icon(() -> Items.DOENER_SPEAR.get().getDefaultInstance())
+            .icon(() -> Items.DOENER_ITEM.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
                 output.accept(Items.DOENER_SPEAR.get());
+                output.accept(Items.DOENER_KNIFE.get());
+                output.accept(Items.DOENER_MEAT.get());
             output.accept(Items.DOENER_ITEM.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
             }).build());
 

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "minecraft:beetroot"
+    },
+    {
+      "item": "createdoener:doener_meat"
+    },
+    {
+      "item": "createdoener:doener_meat"
+    },
+    {
+      "item": "createdoener:doener_meat"
+    },
+    {
+      "item": "minecraft:bread"
+    }
+  ],
+  "result": {
+    "item": "createdoener:doener",
+    "count": 1
+  }
+}
