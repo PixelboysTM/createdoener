@@ -17,7 +17,7 @@ public class Items {
     public static final RegistryObject<Item> DOENER_KNIFE = ITEMS.register("doener_knife", () -> new Item(new Item.Properties().durability(500)));
 
     public static final RegistryObject<Item> DOENER_MEAT = ITEMS.register("doener_meat", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().nutrition(1).meat().fast().build())));
-    public static final RegistryObject<Item> DOENER_SPEAR = ITEMS.register("doener_spear", () -> new BlockItem(Blocks.DOENER_SPEAR.get(), new Item.Properties()));
+//    public static final RegistryObject<Item> DOENER_SPEAR = ITEMS.register("doener_spear", () -> new BlockItem(Blocks.DOENER_SPEAR.get(), new Item.Properties()));
 
     public static void register() {
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());

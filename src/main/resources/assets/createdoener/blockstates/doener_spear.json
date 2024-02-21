@@ -2,7 +2,8 @@
   "multipart": [
     {
       "when": {
-        "fill": "full"
+        "fill": "full",
+        "state": "cooked"
       },
       "apply": {
         "model": "createdoener:block/doener_spear_filled_full"
@@ -10,7 +11,8 @@
     },
     {
       "when": {
-        "fill": "two"
+        "fill": "two",
+        "state": "cooked"
       },
       "apply": {
         "model": "createdoener:block/doener_spear_filled_two"
@@ -18,10 +20,65 @@
     },
     {
       "when": {
-        "fill": "one"
+        "fill": "one",
+        "state": "cooked"
       },
       "apply": {
         "model": "createdoener:block/doener_spear_filled_one"
+      }
+    },
+    {
+      "when": {
+        "fill": "full",
+        "state": "medium"
+      },
+      "apply": {
+        "model": "createdoener:block/doener_spear_filled_full_medium"
+      }
+    },
+    {
+      "when": {
+        "fill": "two",
+        "state": "medium"
+      },
+      "apply": {
+        "model": "createdoener:block/doener_spear_filled_two_medium"
+      }
+    },
+    {
+      "when": {
+        "fill": "one",
+        "state": "medium"
+      },
+      "apply": {
+        "model": "createdoener:block/doener_spear_filled_one_medium"
+      }
+    },
+    {
+      "when": {
+        "fill": "full",
+        "state": "raw"
+      },
+      "apply": {
+        "model": "createdoener:block/doener_spear_filled_full_raw"
+      }
+    },
+    {
+      "when": {
+        "fill": "two",
+        "state": "raw"
+      },
+      "apply": {
+        "model": "createdoener:block/doener_spear_filled_two_raw"
+      }
+    },
+    {
+      "when": {
+        "fill": "one",
+        "state": "raw"
+      },
+      "apply": {
+        "model": "createdoener:block/doener_spear_filled_one_raw"
       }
     },
     {
@@ -30,7 +87,7 @@
       },
       "apply": {
         "model": "createdoener:block/doener_spear",
-        "y": 270
+        "y": 90
       }
     },
     {
@@ -39,7 +96,7 @@
       },
       "apply": {
         "model": "createdoener:block/doener_spear",
-        "y": 90
+        "y": 270
       }
     },
     {
@@ -48,7 +105,7 @@
       },
       "apply": {
         "model": "createdoener:block/doener_spear",
-        "y": 180
+        "y": 0
       }
     },
     {
@@ -57,7 +114,7 @@
       },
       "apply": {
         "model": "createdoener:block/doener_spear",
-        "y": 0
+        "y": 180
       }
     }
   ]

@@ -1,0 +1,6 @@
+{
+  "parent": "createdoener:block/doener_spear_filled_one",
+  "textures": {
+    "0": "createdoener:block/doener_spear_flesh_medium"
+  }
+}

@@ -1,11 +1,14 @@
 package de.pixelboystm.block;
+import com.simibubi.create.content.equipment.goggles.IHaveGoggleInformation;
 import com.simibubi.create.content.kinetics.base.IRotate;
+import com.simibubi.create.content.kinetics.simpleRelays.ShaftBlock;
 import com.simibubi.create.foundation.block.IBE;
 import de.pixelboystm.blockEntity.BlockEntityTypes;
 import de.pixelboystm.blockEntity.DoenerSpearBlockEntity;
 import de.pixelboystm.createdoener.CreateDoener;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -25,6 +28,8 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class DoenerSpear extends Block implements IRotate, IBE<DoenerSpearBlockEntity> {
 
@@ -79,8 +84,9 @@ public class DoenerSpear extends Block implements IRotate, IBE<DoenerSpearBlockE
             };
         }
     }
-    public DoenerSpear() {
-        super(BlockBehaviour.Properties.of().destroyTime(1.2f).strength(3).noOcclusion());
+    public DoenerSpear(Properties p) {
+//        super(BlockBehaviour.Properties.of().destroyTime(1.2f).strength(3).noOcclusion());
+        super(p);
         registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH).setValue(FILL, Fill.None).setValue(STATE, CookState.Raw));
     }
 
@@ -110,7 +116,7 @@ public class DoenerSpear extends Block implements IRotate, IBE<DoenerSpearBlockE
 
     @Override
     public Direction.Axis getRotationAxis(BlockState state) {
-        return Direction.Axis.Z;
+        return Direction.Axis.Y;
     }
 
     @Override
@@ -159,4 +165,6 @@ public class DoenerSpear extends Block implements IRotate, IBE<DoenerSpearBlockE
 
         return InteractionResult.PASS;
     }
+
+
 }
